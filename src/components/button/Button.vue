@@ -1,5 +1,5 @@
 <template>
-<div>button</div>
+<b-button />
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-tree -J --noreport --prune src/components > public/components.json
+tree -Jf --noreport --prune src/components > public/components-manifest.json
 echo "> Created components directory map"
 
 rm -rf public/components
