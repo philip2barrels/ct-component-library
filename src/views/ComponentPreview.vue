@@ -1,21 +1,23 @@
 <template>
-  <b-container fluid>
-    <div v-for="item in manifest" :key="item.id">
-      <vue-markdown :source="item.markdown"></vue-markdown>
-      <component :is="kebabCase(item.name)"></component>
+  <b-container fluid v-if="loaded">
+    <div v-for="(item, i) in manifest" :key="item.id">
+      <b-container>
+        <component :is="kebabCase(item.name)"></component>
+        <vue-markdown :source="item.markdown"></vue-markdown>
+        <h3 class="mt-1 mb-1" v-if="i === 0">Examples</h3>
+      </b-container>
     </div>
-
   </b-container>
 </template>
 
 <script>
   import _ from 'lodash'
-  import { BContainer } from 'bootstrap-vue'
+  import { BContainer, BTabs, BTab } from 'bootstrap-vue'
   import VueMarkdown from 'vue-markdown'
 
   export default {
     name: 'ComponentPreview',
-    components: { BContainer, VueMarkdown },
+    components: { BContainer, BTabs, BTab, VueMarkdown },
     computed: {
       id: function(){
         return this.$route.params.id
@@ -30,8 +32,6 @@
           const vueFile = item.name.indexOf('.vue') > -1
           const markdownFile = item.name.indexOf('.md') > -1 || item.name.indexOf('.markdown') > -1
 
-
-
           if (item.type === 'file' && vueFile) {
             let paths = item.name.split('/')
             const name = paths[paths.length - 1].replace('.vue', '')
@@ -42,14 +42,13 @@
             entry.markdown = await response.text();
           }
         })
-
         return entry
       }
     },
     data: function(){
       return {
+        loaded: false,
         manifest: [],
-        markdown: ''
       }
     },
     async mounted(){
@@ -75,7 +74,7 @@
         })
       }
       this.manifest = formattedData
-      console.log(this.manifest)
+      this.loaded = true
     }
     }
   }
