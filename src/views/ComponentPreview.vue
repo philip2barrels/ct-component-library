@@ -2,14 +2,14 @@
   <b-container fluid>
     <div v-for="item in manifest" :key="item.id">
       <vue-markdown :source="item.markdown"></vue-markdown>
-      <template></template>
-
+      <component :is="kebabCase(item.name)"></component>
     </div>
+
   </b-container>
 </template>
 
 <script>
-
+  import _ from 'lodash'
   import { BContainer } from 'bootstrap-vue'
   import VueMarkdown from 'vue-markdown'
 
@@ -22,28 +22,27 @@
       },
     },
     methods: {
-      fetchMarkdown: async function(){
-        const id = this.id
-        let response = await fetch(`/components/${id}/README.md`);
-        let data = await response.text()
-
-        this.markdown = data;
-      },
+      kebabCase:(val) => _.kebabCase(val),
       extractManifestData: function(node){
-        // const id = this.id
-        const entry = {id: Date.now()}
+
+        const entry = { id: Date.now() }
         node.contents.map(async item => {
           const vueFile = item.name.indexOf('.vue') > -1
           const markdownFile = item.name.indexOf('.md') > -1 || item.name.indexOf('.markdown') > -1
 
+
+
           if (item.type === 'file' && vueFile) {
-            entry.template = item.name.replace('src', '')
+            let paths = item.name.split('/')
+            const name = paths[paths.length - 1].replace('.vue', '')
+            entry.name = name
+            entry.template = name
           } else if(item.type === 'file' && markdownFile) {
             let response = await fetch(item.name.replace('src', ''));
             entry.markdown = await response.text();
           }
         })
-        console.log(entry)
+
         return entry
       }
     },

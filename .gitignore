@@ -25,3 +25,4 @@ pnpm-debug.log*
 *.sw?
 
 public/components
+public/components-manifest.json
