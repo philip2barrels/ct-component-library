@@ -1,21 +1,21 @@
 <template>
-  <div id="app">
+  <b-container fluid id="app">
     <navigation />
     <router-view />
-  </div>
+  </b-container>
 </template>
 
 <script>
 import Navigation from "@/views/Navigation.vue";
+import { BContainer } from "bootstrap-vue";
 export default {
   name: "App",
-  components: { Navigation }
+  components: { Navigation, BContainer }
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

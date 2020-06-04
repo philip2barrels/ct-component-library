@@ -1,19 +1,17 @@
 <template>
   <b-navbar toggleable="lg" type="light" class="mb-2">
-    <b-navbar-brand href="#">ct-component-library</b-navbar-brand>
+    <b-navbar-brand href="/">ct-component-library</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown text="Components" right>
-          <b-dropdown-item href="#">
-            <router-link to="/components/button">Button</router-link>
-          </b-dropdown-item>
-          <b-dropdown-item href="#">
-            <router-link to="/components/input">Input</router-link>
-          </b-dropdown-item>
+        <b-nav-item-dropdown text="Components" left>
+          <b-dropdown-item to="/components/button">Button</b-dropdown-item>
+          <b-dropdown-item to="/components/input">Input</b-dropdown-item>
+          <b-dropdown-item to="/components/list">List</b-dropdown-item>
+          <b-dropdown-item to="/components/table">Table</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -28,10 +26,10 @@ import {
   BDropdownItem,
   BCollapse,
   BNavbarToggle,
-  BNavbarBrand
-} from "bootstrap-vue";
+  BNavbarBrand,
+} from 'bootstrap-vue';
 export default {
-  name: "Navigation",
+  name: 'Navigation',
   components: {
     BNavbarNav,
     BNavbar,
@@ -39,7 +37,7 @@ export default {
     BDropdownItem,
     BCollapse,
     BNavbarToggle,
-    BNavbarBrand
-  }
+    BNavbarBrand,
+  },
 };
 </script>

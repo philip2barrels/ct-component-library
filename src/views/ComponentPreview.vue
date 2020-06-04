@@ -1,10 +1,10 @@
 <template>
   <b-container fluid v-if="loaded">
     <div v-for="(item, i) in manifest" :key="String(i)">
-      <b-container>
+      <b-container fluid>
         <component v-bind:is="kebabCase(item.name)" :name="`${item.name}-component`"></component>
         <vue-markdown :name="`${item.name}-markdown`">{{item.markdown}}</vue-markdown>
-        <h3 class="mt-1 mb-1" v-if="i === 0">Examples</h3>
+        <h3 class="mt-4 mb-4" v-if="i === 0">Examples</h3>
       </b-container>
     </div>
   </b-container>
