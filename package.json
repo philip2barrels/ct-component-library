@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "./copy-assets.sh && ./build-sidebar.js && vue-cli-service serve",
+    "serve": "./copy-assets.sh && vue-cli-service serve",
     "build": "./copy-assets.sh && vue-cli-service build",
     "test:unit": "./copy-assets.sh && vue-cli-service test:unit",
     "test:e2e": "./copy-assets.sh && vue-cli-service test:e2e",
