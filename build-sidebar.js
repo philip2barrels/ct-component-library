@@ -1,3 +1,4 @@
+let _ = require('lodash');
 const fs = require('fs');
 
 const head = `<template>
@@ -11,6 +12,13 @@ const tail = `    </ul>
 </template>
 
 <script>
+
+/*
+  !!Warning!!
+  This file is created dynamically based on the contents of src/components.
+  Edit build-sidebar.js to make layout changes.
+*/
+
 export default {
   name: 'Sidebar',
 };
@@ -18,10 +26,10 @@ export default {
 
 <style lang="scss" scoped>
   ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
     li {
-        list-style-type: none;
+      list-style-type: none;
     }
   }
 </style>
@@ -42,7 +50,9 @@ let body = '';
 
 types.forEach((componentName) => {
   body += `     <li>
-        <a href="/#/components/${componentName}">${componentName}</a>
+        <a href="/#/components/${componentName}">${_.startCase(
+    componentName
+  )}</a>
       </li>
     `;
 });

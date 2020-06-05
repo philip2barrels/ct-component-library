@@ -3,22 +3,29 @@
     Components
     <ul>
      <li>
-        <a href="/#/components/button">button</a>
+        <a href="/#/components/button">Button</a>
       </li>
          <li>
-        <a href="/#/components/input">input</a>
+        <a href="/#/components/input">Input</a>
       </li>
          <li>
-        <a href="/#/components/list">list</a>
+        <a href="/#/components/list">List</a>
       </li>
          <li>
-        <a href="/#/components/table">table</a>
+        <a href="/#/components/table">Table</a>
       </li>
         </ul>
   </div>
 </template>
 
 <script>
+
+/*
+  !!Warning!!
+  This file is created dynamically based on the contents of src/components.
+  To edit make changes to build-sidebar.js
+*/
+
 export default {
   name: 'Sidebar',
 };
@@ -26,10 +33,10 @@ export default {
 
 <style lang="scss" scoped>
   ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
     li {
-        list-style-type: none;
+      list-style-type: none;
     }
   }
 </style>
