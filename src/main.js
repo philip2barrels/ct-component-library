@@ -46,9 +46,7 @@ requireComponent.keys().forEach((fileName) => {
 });
 
 Vue.component(VueMarkdown);
-
 Vue.config.productionTip = false;
-
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 

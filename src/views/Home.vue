@@ -23,7 +23,6 @@ export default {
   mounted: async function() {
     let response = await fetch('/README.md');
     this.markdown = await response.text();
-    console.log(this.markdown);
     this.loaded = true;
   },
 };
