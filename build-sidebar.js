@@ -27,30 +27,26 @@ export default {
 </style>
 `;
 
-let manifest = null;
+let manifest = JSON.parse(
+  fs.readFileSync('public/components-manifest.json', 'utf8')
+);
 
-fs.readFileSync('public/components-manifest.json', 'utf8', (err, data) => {
-  return (manifest = JSON.parse(data));
+manifest = manifest[0];
+
+const types = manifest.contents.map((component) => {
+  const paths = component.name.split('/');
+  return paths[paths.length - 1];
 });
 
 let body = '';
 
-manifest = manifest && manifest.length > 0 ? manifest[0] : null;
-
-if (manifest) {
-  const types = manifest[0].contents.map((component) => {
-    const paths = component.name.split('/');
-    return paths[paths.length - 1];
-  });
-
-  types.forEach((componentName) => {
-    body += `     <li>
-          <a href="/#/components/${componentName}">${componentName}</a>
-        </li>
-      `;
-  });
-}
+types.forEach((componentName) => {
+  body += `     <li>
+        <a href="/#/components/${componentName}">${componentName}</a>
+      </li>
+    `;
+});
 
 const io = fs.createWriteStream('src/views/Sidebar.vue');
-io.write(`${head}${tail}${body}`);
+io.write(`${head}${body}${tail}`);
 io.end();

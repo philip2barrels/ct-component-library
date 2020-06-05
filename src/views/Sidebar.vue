@@ -2,7 +2,19 @@
   <div>
     Components
     <ul>
-    </ul>
+     <li>
+        <a href="/#/components/button">button</a>
+      </li>
+         <li>
+        <a href="/#/components/input">input</a>
+      </li>
+         <li>
+        <a href="/#/components/list">list</a>
+      </li>
+         <li>
+        <a href="/#/components/table">table</a>
+      </li>
+        </ul>
   </div>
 </template>
 
