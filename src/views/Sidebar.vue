@@ -1,7 +1,8 @@
 <template>
   <div>
     Components
-    <ul></ul>
+    <ul>
+    </ul>
   </div>
 </template>
 
@@ -12,11 +13,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-ul {
+  ul {
   margin: 0;
   padding: 0;
-  li {
-    list-style-type: none;
+    li {
+        list-style-type: none;
+    }
   }
-}
 </style>

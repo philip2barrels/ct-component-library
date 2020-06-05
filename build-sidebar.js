@@ -1,18 +1,5 @@
 const fs = require('fs');
 
-let manifest = null;
-
-fs.readFile('public/components-manifest.json', 'utf8', (err, data) => {
-  manifest = JSON.parse(data);
-});
-
-manifest = manifest && manifest.length > 0 ? manifest[0] : null;
-
-const types = manifest[0].contents.map((component) => {
-  const paths = component.name.split('/');
-  return paths[paths.length - 1];
-});
-
 const head = `<template>
   <div>
     Components
@@ -39,6 +26,19 @@ export default {
   }
 </style>
 `;
+
+let manifest = null;
+
+fs.readFileSync('public/components-manifest.json', 'utf8', (err, data) => {
+  return (manifest = JSON.parse(data));
+});
+
+manifest = manifest && manifest.length > 0 ? manifest[0] : null;
+
+const types = manifest[0].contents.map((component) => {
+  const paths = component.name.split('/');
+  return paths[paths.length - 1];
+});
 
 let body = '';
 
