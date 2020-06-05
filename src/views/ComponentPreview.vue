@@ -4,12 +4,12 @@
       <b-container fluid>
         <component :is="kebabCase(item.name)" :key="`${item.name}-component`" />
         <vue-markdown
-          :watches="['markdown']"
+          :watches="['item.markdown']"
           :source="item.markdown"
           :key="`${item.name}-markdown`"
           class="mt-2 mb-2"
         />
-        <h3 class="mt-4 mb-4" v-if="i === 0">Examples</h3>
+        <h3 class="mt-4 mb-4" v-if="i === 0 && previewData.length > 1">Examples</h3>
       </b-container>
     </div>
   </b-container>

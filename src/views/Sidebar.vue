@@ -23,7 +23,7 @@
 /*
   !!Warning!!
   This file is created dynamically based on the contents of src/components.
-  To edit make changes to build-sidebar.js
+  Edit build-sidebar.js to make layout changes.
 */
 
 export default {
