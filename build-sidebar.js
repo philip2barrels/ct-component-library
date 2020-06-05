@@ -33,21 +33,23 @@ fs.readFileSync('public/components-manifest.json', 'utf8', (err, data) => {
   return (manifest = JSON.parse(data));
 });
 
-manifest = manifest && manifest.length > 0 ? manifest[0] : null;
-
-const types = manifest[0].contents.map((component) => {
-  const paths = component.name.split('/');
-  return paths[paths.length - 1];
-});
-
 let body = '';
 
-types.forEach((componentName) => {
-  body += `     <li>
-        <a href="/#/components/${componentName}">${componentName}</a>
-      </li>
-    `;
-});
+manifest = manifest && manifest.length > 0 ? manifest[0] : null;
+
+if (manifest) {
+  const types = manifest[0].contents.map((component) => {
+    const paths = component.name.split('/');
+    return paths[paths.length - 1];
+  });
+
+  types.forEach((componentName) => {
+    body += `     <li>
+          <a href="/#/components/${componentName}">${componentName}</a>
+        </li>
+      `;
+  });
+}
 
 const io = fs.createWriteStream('src/views/Sidebar.vue');
 io.write(`${head}${tail}${body}`);
