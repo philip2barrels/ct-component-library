@@ -5,9 +5,10 @@
   "scripts": {
     "serve": "./copy-assets.sh && node build-sidebar.js && vue-cli-service serve",
     "build": "./copy-assets.sh && node build-sidebar.js && vue-cli-service build",
-    "test:unit": "./copy-assets.sh && node build-sidebar.js && vue-cli-service test:unit",
+    "test": "vue-cli-service test",
+    "lint": "./copy-assets.sh && node build-sidebar.js && vue-cli-service lint",
     "test:e2e": "./copy-assets.sh && node build-sidebar.js && vue-cli-service test:e2e",
-    "lint": "./copy-assets.sh && node build-sidebar.js && vue-cli-service lint"
+    "test:unit": "./copy-assets.sh && node build-sidebar.js && vue-cli-service test:unit"
   },
   "dependencies": {
     "bootstrap-vue": "^2.1.0",
@@ -38,6 +39,7 @@
     "sass": "^1.19.0",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-bootstrap-vue": "^0.6.0",
+    "vue-cli-plugin-prettier-beta": "^0.1.0",
     "vue-template-compiler": "^2.6.11"
   }
 }

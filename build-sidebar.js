@@ -1,11 +1,11 @@
-let _ = require('lodash');
-const fs = require('fs');
+let _ = require('lodash')
+const fs = require('fs')
 
 const head = `<template>
   <div>
     Components
     <ul>
-`;
+`
 
 const tail = `    </ul>
   </div>
@@ -33,30 +33,30 @@ export default {
     }
   }
 </style>
-`;
+`
 
 let manifest = JSON.parse(
-  fs.readFileSync('public/components-manifest.json', 'utf8')
-);
+  fs.readFileSync('public/components-manifest.json', 'utf8'),
+)
 
-manifest = manifest[0];
+manifest = manifest[0]
 
-const types = manifest.contents.map((component) => {
-  const paths = component.name.split('/');
-  return paths[paths.length - 1];
-});
+const types = manifest.contents.map(component => {
+  const paths = component.name.split('/')
+  return paths[paths.length - 1]
+})
 
-let body = '';
+let body = ''
 
-types.forEach((componentName) => {
+types.forEach(componentName => {
   body += `     <li>
         <a href="/#/components/${componentName}">${_.startCase(
-    componentName
+    componentName,
   )}</a>
       </li>
-    `;
-});
+    `
+})
 
-const io = fs.createWriteStream('src/views/Sidebar.vue');
-io.write(`${head}${body}${tail}`);
-io.end();
+const io = fs.createWriteStream('src/views/Sidebar.vue')
+io.write(`${head}${body}${tail}`)
+io.end()
