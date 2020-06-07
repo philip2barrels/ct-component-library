@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import {BRow, BCol, BButton} from 'bootstrap-vue';
+import { BRow, BCol, BButton } from 'bootstrap-vue'
 export default {
   name: 'Button',
-  components: {BRow, BCol, BButton},
+  components: { BRow, BCol, BButton },
   props: {
     msg: String,
   },
-};
+}
 </script>
 
 <style scoped lang="scss"></style>

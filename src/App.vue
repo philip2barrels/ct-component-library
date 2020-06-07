@@ -11,27 +11,27 @@
 </template>
 
 <script>
-import Navigation from '@/views/Navigation.vue';
-import Sidebar from '@/views/Sidebar.vue';
-import {BContainer} from 'bootstrap-vue';
+import Navigation from '@/views/Navigation.vue'
+import Sidebar from '@/views/Sidebar.vue'
+import { BContainer } from 'bootstrap-vue'
 export default {
   name: 'App',
-  components: {Navigation, BContainer, Sidebar},
+  components: { Navigation, BContainer, Sidebar },
   methods: {
     load: async function() {
-      const response = await fetch('/components-manifest.json');
-      return await response.json();
+      const response = await fetch('/components-manifest.json')
+      return await response.json()
     },
   },
   mounted: async function() {
-    this.manifest = await this.load();
+    this.manifest = await this.load()
   },
   data: () => {
     return {
       manifest: null,
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss">

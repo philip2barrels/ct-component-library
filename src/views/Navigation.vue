@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import {BNavbar, BNavbarBrand} from 'bootstrap-vue';
+import { BNavbar, BNavbarBrand } from 'bootstrap-vue'
 export default {
   name: 'Navigation',
   components: {
     BNavbar,
     BNavbarBrand,
   },
-};
+}
 </script>

@@ -110,12 +110,12 @@ Reference: https://bootstrap-vue.js.org/docs/components/table/#comp-ref-b-table
   clearSelected
 */
 
-import CPagination from '@/components/pagination/Pagination';
-import CtCenteredSpinner from '@/components/ct-centered-spinner/ctCenteredSpinner';
+import CPagination from '@/components/pagination/Pagination'
+import CtCenteredSpinner from '@/components/ct-centered-spinner/ctCenteredSpinner'
 
 export default {
   name: 'CtTable',
-  components: {CtCenteredSpinner, CPagination},
+  components: { CtCenteredSpinner, CPagination },
   props: {
     fields: {
       default: false,
@@ -155,19 +155,19 @@ export default {
     pageOptions: {
       type: Array,
       default: () => [
-        {value: 25, text: '25 per page'},
-        {value: 50, text: '50 per page'},
-        {value: 100, text: '100 per page'},
-        {value: 200, text: '200 per page'},
-        {value: 500, text: '500 per page'},
-        {value: 1000, text: '1000 per page'},
-        {value: 10000, text: '10000 per page'},
+        { value: 25, text: '25 per page' },
+        { value: 50, text: '50 per page' },
+        { value: 100, text: '100 per page' },
+        { value: 200, text: '200 per page' },
+        { value: 500, text: '500 per page' },
+        { value: 1000, text: '1000 per page' },
+        { value: 10000, text: '10000 per page' },
       ],
     },
   },
   mounted() {
     if (this.selectable)
-      this.tableDefinition.unshift({key: 'selected', sortable: false});
+      this.tableDefinition.unshift({ key: 'selected', sortable: false })
   },
   data() {
     return {
@@ -176,71 +176,71 @@ export default {
       currentPage: 1,
       selected: [],
       isSelectAllIndeterminate: false,
-    };
+    }
   },
   watch: {
     selected: function(newSelection) {
       // This is the cleanest and most reliable way to update the state of the selectAll checkbox.
       if (newSelection.length === 0) {
-        this.isSelectAllIndeterminate = false;
-        this.isSelectAllChecked = false;
+        this.isSelectAllIndeterminate = false
+        this.isSelectAllChecked = false
       } else if (newSelection.length === this.resultsPerPage) {
-        this.isSelectAllIndeterminate = false;
-        this.isSelectAllChecked = true;
+        this.isSelectAllIndeterminate = false
+        this.isSelectAllChecked = true
       } else {
-        this.isSelectAllIndeterminate = true;
+        this.isSelectAllIndeterminate = true
       }
 
-      this.$emit('selection-changed', newSelection);
+      this.$emit('selection-changed', newSelection)
     },
     currentPage() {
-      this.paginationChanged();
+      this.paginationChanged()
     },
     resultsPerPage() {
-      this.paginationChanged();
+      this.paginationChanged()
     },
   },
   methods: {
     onRowSelected(data) {
-      let newData = [];
+      let newData = []
       for (const item of data) {
         if (this.selectableFunction(item)) {
-          newData.push(item);
+          newData.push(item)
         }
       }
-      this.$emit('row-selected', newData);
-      this.selected = newData;
+      this.$emit('row-selected', newData)
+      this.selected = newData
     },
     onHeadClicked(data) {
-      this.$emit('head-clicked', data);
+      this.$emit('head-clicked', data)
     },
     handleSelectAllCheckbox() {
       if (this.isSelectAllChecked) {
-        this.selectAllRows();
+        this.selectAllRows()
       } else {
-        this.clearSelected();
+        this.clearSelected()
       }
     },
     selectAllRows() {
-      this.$refs.btable.selectAllRows();
+      this.$refs.btable.selectAllRows()
     },
     clearSelected() {
-      this.$refs.btable.clearSelected();
+      this.$refs.btable.clearSelected()
     },
     handleRowCheckbox(checkboxState, rowIndex) {
       if (checkboxState) {
-        this.$refs.btable.selectRow(rowIndex);
+        this.$refs.btable.selectRow(rowIndex)
       } else {
-        this.$refs.btable.unselectRow(rowIndex);
+        this.$refs.btable.unselectRow(rowIndex)
       }
     },
     paginationChanged() {
-      this.clearSelected();
+      this.clearSelected()
       this.$emit('pagination-changed', {
         currentPage: this.currentPage,
         perPage: this.resultsPerPage,
-      });
+      })
     },
   },
-};
+}
 </script>

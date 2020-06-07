@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import BPagination from 'bootstrap-vue';
+import BPagination from 'bootstrap-vue'
 export default {
   extends: BPagination,
   name: 'CPagination',
   props: {
     items: {
       default() {
-        return [];
+        return []
       },
       type: Array,
     },
@@ -42,20 +42,20 @@ export default {
   data: function() {
     return {
       cPage: this.currentPage,
-    };
+    }
   },
   methods: {
     onInput() {
-      this.$parent.$children.find((child) => {
-        return child.$options._componentTag === 'b-table';
-      }).$el.scrollTop = 0;
+      this.$parent.$children.find(child => {
+        return child.$options._componentTag === 'b-table'
+      }).$el.scrollTop = 0
       window.scroll({
         top: 0,
         left: 0,
         behavior: 'smooth',
-      });
-      this.$emit('update:current-page', this.cPage);
+      })
+      this.$emit('update:current-page', this.cPage)
     },
   },
-};
+}
 </script>

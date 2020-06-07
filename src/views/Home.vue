@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown';
+import VueMarkdown from 'vue-markdown'
 
 export default {
   name: 'Home',
@@ -18,12 +18,12 @@ export default {
     return {
       loaded: false,
       markdown: null,
-    };
+    }
   },
   mounted: async function() {
-    let response = await fetch('/README.md');
-    this.markdown = await response.text();
-    this.loaded = true;
+    let response = await fetch('/README.md')
+    this.markdown = await response.text()
+    this.loaded = true
   },
-};
+}
 </script>
