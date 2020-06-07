@@ -1,0 +1,3 @@
+# CenteredSpinner
+
+## Todo add examples

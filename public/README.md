@@ -2,7 +2,9 @@
 
 ## Requirements
 
-- [tree](https://linux.die.net/man/1/tree) `brew install tree`
+- [tree](https://linux.die.net/man/1/tree)
+
+`brew install tree`
 
 ## Project setup
 
@@ -50,6 +52,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Use the example directory below as your template
 - Add as many examples as you want
 - Every example should have a README describing usage
+- The component, README, and all examples
 
 Example: Create a folder named MyBrandNewComponent with this structure
 

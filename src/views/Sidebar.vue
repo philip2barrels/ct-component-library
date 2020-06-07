@@ -6,10 +6,16 @@
         <a href="/#/components/button">Button</a>
       </li>
          <li>
+        <a href="/#/components/ct-centered-spinner">Ct Centered Spinner</a>
+      </li>
+         <li>
         <a href="/#/components/input">Input</a>
       </li>
          <li>
         <a href="/#/components/list">List</a>
+      </li>
+         <li>
+        <a href="/#/components/pagination">Pagination</a>
       </li>
          <li>
         <a href="/#/components/table">Table</a>
@@ -23,7 +29,7 @@
 /*
   !!Warning!!
   This file is created dynamically based on the contents of src/components.
-  To edit make changes to build-sidebar.js
+  Edit build-sidebar.js to make layout changes.
 */
 
 export default {
