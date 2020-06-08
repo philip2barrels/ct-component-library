@@ -31,6 +31,9 @@ export default {
   components: { BContainer, VueMarkdown },
   props: ['manifest'],
   methods: {
+    filters: input => {
+      return input.sort((a, b) => a.name.localeCompare(b.name))
+    },
     kebabCase: val => _.kebabCase(val),
     containsMarkdownFileExtension: string =>
       string.includes('.md') || string.includes('.markdown'),
