@@ -1,17 +1,19 @@
 <template>
   <b-container fluid v-if="loaded">
     <div v-for="(item, i) in previewData" :key="String(i)">
+      <!-- <h1 class="mt-2 mb-2">{{ startCase(item.name) }}</h1> -->
       <b-container fluid class="mb-4">
         <component
           :is="kebabCase(item.name)"
           :key="`${item.name}-component`"
-          class="mt-2 mb-2"
+          class="mt-2 mb-2 ml-0 pl-0"
         />
         <vue-markdown
           :watches="['item.markdown']"
           :source="item.markdown"
           :key="`${item.name}-markdown`"
-          class="mt-2 mb-2"
+          class="mt-4 mb-2"
+          @rendered="update"
         />
         <h3 class="mt-4 mb-4" v-if="i === 0 && previewData.length > 1">
           Examples
@@ -26,15 +28,18 @@ import _ from 'lodash'
 import { BContainer } from 'bootstrap-vue'
 import VueMarkdown from 'vue-markdown'
 
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-dark.css'
+import 'prismjs/components/prism-go.min' // language
+
 export default {
   name: 'ComponentPreview',
   components: { BContainer, VueMarkdown },
   props: ['manifest'],
   methods: {
-    filters: input => {
-      return input.sort((a, b) => a.name.localeCompare(b.name))
-    },
+    filters: input => input.sort((a, b) => a.name.localeCompare(b.name)),
     kebabCase: val => _.kebabCase(val),
+    startCase: val => _.startCase(val),
     containsMarkdownFileExtension: string =>
       string.includes('.md') || string.includes('.markdown'),
     containsSFCFileExtension: string => string.includes('.vue'),
@@ -88,10 +93,19 @@ export default {
           })
         }
 
-        this.previewData = formattedData
+        this.previewData = this.filters(formattedData)
         this.loaded = true
         console.log(`Loaded: ${this.previewData.length}`, formattedData)
+        this.$nextTick(() => {
+          Prism.highlightAll()
+        })
       }
+    },
+    update: async function() {
+      this.$nextTick(async () => {
+        console.log('update', Prism)
+        await Prism.highlightAll()
+      })
     },
   },
   data: function() {

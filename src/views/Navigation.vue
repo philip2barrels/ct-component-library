@@ -1,5 +1,5 @@
 <template>
-  <b-navbar type="dark" variant="dark" class="mb-2">
+  <b-navbar type="dark" variant="dark">
     <b-navbar-brand href="/">ct-component-library</b-navbar-brand>
   </b-navbar>
 </template>

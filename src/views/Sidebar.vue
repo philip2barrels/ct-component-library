@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Components
+  <div class="pl-3">
+    <h5>Components</h5>
     <ul>
      <li>
         <a href="/#/components/button">Button</a>
@@ -40,9 +40,11 @@ export default {
 <style lang="scss" scoped>
   ul {
     margin: 0;
+    margin-left: 1em;
     padding: 0;
     li {
       list-style-type: none;
+      text-align: left;
     }
   }
 </style>
