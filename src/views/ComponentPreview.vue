@@ -1,8 +1,12 @@
 <template>
   <b-container fluid v-if="loaded">
     <div v-for="(item, i) in previewData" :key="String(i)">
-      <b-container fluid>
-        <component :is="kebabCase(item.name)" :key="`${item.name}-component`" />
+      <b-container fluid class="mb-4">
+        <component
+          :is="kebabCase(item.name)"
+          :key="`${item.name}-component`"
+          class="mt-2 mb-2"
+        />
         <vue-markdown
           :watches="['item.markdown']"
           :source="item.markdown"

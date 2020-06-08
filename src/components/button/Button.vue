@@ -21,4 +21,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.btn {
+  margin-right: 0.2em !important;
+}
+</style>

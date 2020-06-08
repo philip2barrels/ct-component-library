@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-container class="mb-2">
+    <b-container>
       <b-button>Button</b-button>
       <b-button variant="danger">Button</b-button>
       <b-button variant="success">Button</b-button>

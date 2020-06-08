@@ -47,7 +47,7 @@ export default {
 }
 
 #sidebar {
-  max-width: 100px;
+  flex: 1;
   min-height: 100%;
   padding: 0;
   ul {
