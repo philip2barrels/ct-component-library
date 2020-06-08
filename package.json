@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "./copy-assets.sh && node build-sidebar.js && vue-cli-service serve",
+    "serve": "./copy-assets.sh && node build-sidebar.js && nohup node watch.js & vue-cli-service serve",
+    "dev": "./copy-assets.sh && node build-sidebar.js && vue-cli-service serve && node watch.js",
     "build": "./copy-assets.sh && node build-sidebar.js && vue-cli-service build",
     "test": "vue-cli-service test",
     "lint": "./copy-assets.sh && node build-sidebar.js && vue-cli-service lint",
@@ -11,10 +12,13 @@
     "test:unit": "./copy-assets.sh && node build-sidebar.js && vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap-vue": "^2.1.0",
+    "chokidar": "^3.4.0",
     "core-js": "^3.6.5",
     "fs": "0.0.1-security",
     "lodash": "^4.17.15",
+    "shelljs": "^0.8.4",
     "vue": "^2.6.11",
     "vue-markdown": "^2.2.4",
     "vue-router": "^3.2.0"

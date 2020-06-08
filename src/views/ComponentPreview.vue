@@ -73,7 +73,9 @@ export default {
 
             if (isDirectory && isExamplesFolder) {
               item.contents.forEach(async ex => {
-                formattedData.push(await this.extractManifestData(ex))
+                const res = await this.extractManifestData(ex)
+                console.log('found example', res)
+                formattedData.push(res)
               })
             }
           })
@@ -81,6 +83,7 @@ export default {
 
         this.previewData = formattedData
         this.loaded = true
+        console.log(`Loaded: ${this.previewData.length}`, formattedData)
       }
     },
   },

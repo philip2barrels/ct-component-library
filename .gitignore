@@ -26,3 +26,5 @@ pnpm-debug.log*
 
 public/components
 public/components-manifest.json
+nohup.out
+app.log
