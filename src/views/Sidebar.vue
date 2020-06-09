@@ -3,24 +3,24 @@
     <h5>Components</h5>
     <ul>
      <li>
-        <a href="/#/components/button">Button</a>
-      </li>
-         <li>
-        <a href="/#/components/ct-centered-spinner">Ct Centered Spinner</a>
-      </li>
-         <li>
-        <a href="/#/components/input">Input</a>
-      </li>
-         <li>
-        <a href="/#/components/list">List</a>
-      </li>
-         <li>
-        <a href="/#/components/pagination">Pagination</a>
-      </li>
-         <li>
-        <a href="/#/components/table">Table</a>
-      </li>
-        </ul>
+          <a href="/#/components/button">Button</a>
+        </li>
+           <li>
+          <a href="/#/components/ct-centered-spinner">Ct Centered Spinner</a>
+        </li>
+           <li>
+          <a href="/#/components/input">Input</a>
+        </li>
+           <li>
+          <a href="/#/components/list">List</a>
+        </li>
+           <li>
+          <a href="/#/components/pagination">Pagination</a>
+        </li>
+           <li>
+          <a href="/#/components/table">Table</a>
+        </li>
+          </ul>
   </div>
 </template>
 
