@@ -1,11 +1,11 @@
 <template>
-  <b-container fluid id="app">
+  <b-container fluid id="app" class="pb-4">
     <navigation id="nav" />
-    <b-container fluid id="container">
+    <b-container fluid id="container" class="mb-4">
       <b-container id="sidebar" fluid class="bg-darkgray">
         <sidebar />
       </b-container>
-      <b-container fluid id="router-view"
+      <b-container fluid id="router-view" class="pb-4"
         ><router-view :manifest="manifest"
       /></b-container>
     </b-container>
@@ -38,7 +38,6 @@ export default {
 
 <style lang="scss">
 #app {
-  // position: fixed;
   min-height: 100% !important;
   padding: 0;
   margin: 0;
@@ -63,11 +62,11 @@ export default {
 }
 
 #router-view {
-  position: absolute;
+  position: fixed;
   max-height: 100%;
-  left: 150px;
+  left: 150px !important;
   top: 60px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #sidebar {
