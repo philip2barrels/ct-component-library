@@ -1,5 +1,8 @@
 `<b-form-input>` defaults to a text input, but you can set the type prop to one of the supported native browser HTML5 types: text, password, email, number, url, tel, search, date, datetime, datetime-local, month, week, time, range, or color.
 
+
+### Form Input Example
+
 ```
 <template>
   <b-container fluid>
