@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-tree -J src/components > public/components-manifest.json
+tree -JRf src/components > public/components-manifest.json
 echo "> Created components directory map"
 cat public/components-manifest.json
 
