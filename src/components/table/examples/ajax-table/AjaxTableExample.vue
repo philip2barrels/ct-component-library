@@ -34,7 +34,5 @@ export default {
       console.log('loaded', val)
     },
   },
-
-  watch: {},
 }
 </script>
