@@ -62,7 +62,7 @@ export default {
 }
 
 #router-view {
-  // position: fixed;
+  position: fixed;
   max-height: 100%;
   left: 150px !important;
   top: 60px;
