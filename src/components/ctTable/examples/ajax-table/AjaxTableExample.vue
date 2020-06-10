@@ -3,17 +3,11 @@
 </template>
 
 <script>
-import AjaxTable from '@/components/table/AjaxTable'
+import AjaxTable from '@/components/ctTable/AjaxTable'
 
 export default {
   name: 'AjaxTableExample',
-
   components: { AjaxTable },
-
-  props: {},
-
-  mounted() {},
-
   data() {
     return {
       tableDefinition: {

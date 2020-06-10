@@ -9,6 +9,9 @@
           <a href="/#/components/ct-centered-spinner">Ct Centered Spinner</a>
         </li>
            <li>
+          <a href="/#/components/ctTable">Ct Table</a>
+        </li>
+           <li>
           <a href="/#/components/input">Input</a>
         </li>
            <li>
@@ -16,9 +19,6 @@
         </li>
            <li>
           <a href="/#/components/pagination">Pagination</a>
-        </li>
-           <li>
-          <a href="/#/components/table">Table</a>
         </li>
           </ul>
   </div>

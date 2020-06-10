@@ -85,7 +85,7 @@ a loading spinner, and cleaner multi-select functionality.
 Reference: https://bootstrap-vue.js.org/docs/components/table/#comp-ref-b-table
 
 ## Usage Example
-  <ct-table
+  <ct-ctTable
     :loaded="loaded"
     :fields="tableDefinition"
     :items="searchResults"

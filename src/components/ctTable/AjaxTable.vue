@@ -28,7 +28,7 @@
 /*
 
 # Ajax Table
-This is a wrapper for the CtTable component with some additional functionality. This table processes
+This is a wrapper for the CtTable component with some additional functionality. This ctTable processes
 its own AJAX request for paginated data and has the ability to pass filters, order-by info, and
 scope-based queries through to the API. All parameters, slots, and events are passed through this,
 as if they were going directly to/from the grandparent/grandchild components. To access the raw
@@ -44,7 +44,7 @@ be used to specify the sorting column.
 */
 
 // import http from '../http' Inline client added below
-import CtTable from '@/components/table/CtTable'
+import CtTable from '@/components/ctTable/CtTable'
 import qs from 'qs'
 
 import axios from 'axios'

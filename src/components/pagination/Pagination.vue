@@ -47,7 +47,7 @@ export default {
   methods: {
     onInput() {
       this.$parent.$children.find(child => {
-        return child.$options._componentTag === 'b-table'
+        return child.$options._componentTag === 'b-ctTable'
       }).$el.scrollTop = 0
       window.scroll({
         top: 0,
