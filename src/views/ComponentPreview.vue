@@ -2,7 +2,7 @@
   <b-container fluid v-if="loaded">
     <div v-for="(item, i) in previewData" :key="String(i)">
       <!-- <h1 class="mt-2 mb-2">{{ startCase(item.name) }}</h1> -->
-      <b-container fluid class="mb-4 pb-2 pt-4">
+      <b-container class="mb-4 pb-2 pt-4">
         <component
           :is="kebabCase(item.name)"
           :key="`${item.name}-component`"
@@ -16,9 +16,7 @@
           @rendered="update"
         />
         <hr class="mb-2" />
-        <h3 class="mt-4 mb-4" v-if="i === 0 && previewData.length > 1">
-          Examples
-        </h3>
+        <h3 class="mt-4 mb-4" v-if="i === 0 && previewData.length > 1">Examples</h3>
       </b-container>
     </div>
   </b-container>
@@ -96,7 +94,7 @@ export default {
 
         this.previewData = this.filters(formattedData)
         this.loaded = true
-        console.log(`Loaded: ${this.previewData.length}`, formattedData)
+        // console.log(`Loaded: ${this.previewData.length}`, formattedData)
         this.$nextTick(() => {
           Prism.highlightAll()
         })
@@ -104,7 +102,7 @@ export default {
     },
     update: async function() {
       this.$nextTick(async () => {
-        console.log('update', Prism)
+        // console.log('update', Prism)
         await Prism.highlightAll()
       })
     },
