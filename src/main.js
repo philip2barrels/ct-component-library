@@ -11,6 +11,8 @@ import router from './router'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
+import VueMq from 'vue-mq'
+
 const requireComponent = require.context(
   // The relative path of the components folder
   './components',
@@ -49,6 +51,13 @@ Vue.component(VueMarkdown)
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(VueMq, {
+  breakpoints: {
+    sm: 736,
+    md: 1158,
+    lg: Infinity,
+  },
+})
 
 new Vue({
   router,

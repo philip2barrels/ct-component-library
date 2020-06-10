@@ -5,9 +5,9 @@
       <b-container id="sidebar" fluid class="bg-darkgray">
         <sidebar />
       </b-container>
-      <b-container fluid id="router-view" class="pb-4"
-        ><router-view :manifest="manifest"
-      /></b-container>
+      <b-container fluid id="router-view" class="pb-4">
+        <router-view :manifest="manifest" />
+      </b-container>
     </b-container>
   </b-container>
 </template>
@@ -62,7 +62,7 @@ export default {
 }
 
 #router-view {
-  position: fixed;
+  // position: fixed;
   max-height: 100%;
   left: 150px !important;
   top: 60px;
