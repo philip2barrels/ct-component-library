@@ -20,7 +20,7 @@ export default {
         url: '/comments.json',
         defaultOrderBy: 'postId',
         columns: [
-          { key: 'postId', label: 'Post Id', sortable: true },
+          { key: 'postId', label: 'Id', sortable: true },
           { key: 'name', label: 'Name', sortable: true },
           { key: 'email', label: 'Email', sortable: true },
           { key: 'body', label: 'Body', sortable: true },
